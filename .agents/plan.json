@@ -1,0 +1,48 @@
+{
+    "project": "meeting-summarizer",
+    "description": "회의록을 입력하면 AI가 자동으로 요약하고 액션 아이템을 추출하는 앱 (React+FastAPI+SQLite)",
+    "tasks": [
+        {
+            "id": "T1",
+            "title": "meetings 테이블 생성",
+            "agent": "oma-db",
+            "priority": "P0",
+            "dependencies": []
+        },
+        {
+            "id": "T2",
+            "title": "FastAPI 백엔드 및 Gemini API 연동 설정",
+            "agent": "oma-backend",
+            "priority": "P0",
+            "dependencies": [
+                "T1"
+            ]
+        },
+        {
+            "id": "T3",
+            "title": "Next.js 프로젝트 초기화 및 핵심 UI 구현",
+            "agent": "oma-frontend",
+            "priority": "P0",
+            "dependencies": []
+        },
+        {
+            "id": "T4",
+            "title": "API 연동 및 회의록 히스토리 기능 구현",
+            "agent": "oma-frontend",
+            "priority": "P0",
+            "dependencies": [
+                "T2",
+                "T3"
+            ]
+        },
+        {
+            "id": "T5",
+            "title": "보안, API 예외 처리 및 로딩 상태 검증",
+            "agent": "oma-qa",
+            "priority": "P1",
+            "dependencies": [
+                "T4"
+            ]
+        }
+    ]
+}

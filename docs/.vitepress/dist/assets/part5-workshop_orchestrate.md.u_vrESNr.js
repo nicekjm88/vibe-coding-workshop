@@ -1,0 +1,69 @@
+import{_ as a,o as n,c as p,ae as e}from"./chunks/framework.B6gjLfeO.js";const u=JSON.parse('{"title":"/orchestrate — 자동 실행","description":"","frontmatter":{},"headers":[],"relativePath":"part5-workshop/orchestrate.md","filePath":"part5-workshop/orchestrate.md"}'),l={name:"part5-workshop/orchestrate.md"};function t(i,s,o,c,r,d){return n(),p("div",null,[...s[0]||(s[0]=[e(`<h1 id="orchestrate-—-자동-실행" tabindex="-1">/orchestrate — 자동 실행 <a class="header-anchor" href="#orchestrate-—-자동-실행" aria-label="Permalink to &quot;/orchestrate — 자동 실행&quot;">​</a></h1><h2 id="목표" tabindex="-1">목표 <a class="header-anchor" href="#목표" aria-label="Permalink to &quot;목표&quot;">​</a></h2><p>오케스트레이터(<code>oma-orchestrator</code>)가 <code>plan.json</code>을 기반으로 <strong>에이전트들을 자동으로 스폰</strong>하고, 병렬로 실행합니다.</p><h2 id="실행-방법" tabindex="-1">실행 방법 <a class="header-anchor" href="#실행-방법" aria-label="Permalink to &quot;실행 방법&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>/orchestrate</span></span>
+<span class="line"><span>plan.json을 기반으로 실행해줘</span></span></code></pre></div><h2 id="진행-과정" tabindex="-1">진행 과정 <a class="header-anchor" href="#진행-과정" aria-label="Permalink to &quot;진행 과정&quot;">​</a></h2><h3 id="step-1-plan-json-파싱" tabindex="-1">Step 1: plan.json 파싱 <a class="header-anchor" href="#step-1-plan-json-파싱" aria-label="Permalink to &quot;Step 1: plan.json 파싱&quot;">​</a></h3><p>오케스트레이터가 계획 파일을 읽고 <strong>실행 전략</strong>을 수립합니다:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>🤖 오케스트레이터: &quot;plan.json을 로드했습니다.</span></span>
+<span class="line"><span>                  총 7개 태스크, 4개 에이전트 필요.</span></span>
+<span class="line"><span>                  </span></span>
+<span class="line"><span>                  실행 전략:</span></span>
+<span class="line"><span>                  Phase 1: T1 (DB) — 단독 실행</span></span>
+<span class="line"><span>                  Phase 2: T2, T3, T4 (Frontend + Backend) — 병렬 실행</span></span>
+<span class="line"><span>                  Phase 3: T5, T6 (Frontend + QA) — 병렬 실행</span></span>
+<span class="line"><span>                  Phase 4: T7 (Frontend) — 단독 실행&quot;</span></span></code></pre></div><h3 id="step-2-의존성-분석" tabindex="-1">Step 2: 의존성 분석 <a class="header-anchor" href="#step-2-의존성-분석" aria-label="Permalink to &quot;Step 2: 의존성 분석&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>🤖 오케스트레이터: &quot;의존성 그래프:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> T1 (DB 설계)</span></span>
+<span class="line"><span>  ├──→ T2 (입력 UI)      ─┐</span></span>
+<span class="line"><span>  ├──→ T3 (요약 UI)      ─┼──→ T5 (히스토리)  ──→ T7 (다크 모드)</span></span>
+<span class="line"><span>  └──→ T4 (Gemini 연동)  ─┘    T6 (보안 리뷰)</span></span>
+<span class="line"><span>  </span></span>
+<span class="line"><span> Phase 1과 2 사이에 동기화 포인트 설정됨&quot;</span></span></code></pre></div><h3 id="step-3-에이전트-스폰" tabindex="-1">Step 3: 에이전트 스폰 <a class="header-anchor" href="#step-3-에이전트-스폰" aria-label="Permalink to &quot;Step 3: 에이전트 스폰&quot;">​</a></h3><p>각 Phase의 에이전트를 <strong>CLI를 통해 스폰</strong>합니다:</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>🤖 오케스트레이터:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> ▶ Phase 1 시작 ──────────────────────</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> 🟢 [oma-db] T1: meetings 테이블 생성 시작</span></span>
+<span class="line"><span>    → meetings 테이블 생성</span></span>
+<span class="line"><span>      (id, title, raw_text, summary, action_items, user_id, created_at)</span></span>
+<span class="line"><span>    → RLS(Row Level Security) 정책 적용</span></span>
+<span class="line"><span>    → user_id 기반 접근 제어 설정</span></span>
+<span class="line"><span> ✅ [oma-db] T1: 완료 (2분 소요)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> ▶ Phase 2 시작 ──────────────────────</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> 🟢 [oma-frontend] T2: 입력 UI 시작        ← 병렬</span></span>
+<span class="line"><span> 🟢 [oma-frontend] T3: 요약 UI 시작        ← 병렬</span></span>
+<span class="line"><span> 🟢 [oma-backend]  T4: Gemini 연동 시작    ← 병렬</span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span> ✅ [oma-backend]  T4: 완료 (2분 소요)</span></span>
+<span class="line"><span> ✅ [oma-frontend] T2: 완료 (3분 소요)</span></span>
+<span class="line"><span> ✅ [oma-frontend] T3: 완료 (3분 소요)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> ▶ Phase 3 시작 ──────────────────────</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> 🟢 [oma-frontend] T5: 히스토리 목록 시작   ← 병렬</span></span>
+<span class="line"><span> 🟢 [oma-qa]       T6: 보안 리뷰 시작      ← 병렬</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> ⚠️ [oma-qa] T6: XSS 취약점 1건 발견 → 자동 수정 요청</span></span>
+<span class="line"><span> ✅ [oma-qa]       T6: 보안 리뷰 완료 (수정 반영)</span></span>
+<span class="line"><span> ✅ [oma-frontend] T5: 히스토리 완료</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> ▶ Phase 4 시작 ──────────────────────</span></span>
+<span class="line"><span> </span></span>
+<span class="line"><span> 🟢 [oma-frontend] T7: 다크 모드/반응형 시작</span></span>
+<span class="line"><span> ✅ [oma-frontend] T7: 완료 (2분 소요)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> ═══════════════════════════════════════</span></span>
+<span class="line"><span> 🎉 전체 완료! 총 소요 시간: 약 13분</span></span>
+<span class="line"><span> 생성된 파일: 12개</span></span></code></pre></div><h3 id="step-4-결과-보고" tabindex="-1">Step 4: 결과 보고 <a class="header-anchor" href="#step-4-결과-보고" aria-label="Permalink to &quot;Step 4: 결과 보고&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>🤖 오케스트레이터: &quot;결과 요약:</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> 📁 생성된 파일 구조</span></span>
+<span class="line"><span> src/</span></span>
+<span class="line"><span> ├── components/</span></span>
+<span class="line"><span> │   ├── MeetingInput.tsx      ← 회의록 입력</span></span>
+<span class="line"><span> │   ├── SummaryView.tsx       ← AI 요약 표시</span></span>
+<span class="line"><span> │   ├── ActionItems.tsx       ← 액션 아이템 목록</span></span>
+<span class="line"><span> │   └── MeetingHistory.tsx    ← 히스토리 목록</span></span>
+<span class="line"><span> ├── lib/</span></span>
+<span class="line"><span> │   ├── supabase.ts           ← Supabase 클라이언트</span></span>
+<span class="line"><span> │   └── gemini.ts             ← Gemini API 호출</span></span>
+<span class="line"><span> ├── App.tsx</span></span>
+<span class="line"><span> └── main.tsx</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span> 🔒 보안 리뷰: 통과 (1건 자동 수정)</span></span>
+<span class="line"><span> 📊 성능: Lighthouse 95+&quot;</span></span></code></pre></div><h2 id="핵심-관찰-포인트" tabindex="-1">핵심 관찰 포인트 <a class="header-anchor" href="#핵심-관찰-포인트" aria-label="Permalink to &quot;핵심 관찰 포인트&quot;">​</a></h2><div class="tip custom-block"><p class="custom-block-title">🔍 실습 중 주목할 점</p><ol><li><strong>병렬 실행</strong>: T2, T3, T4가 동시에 실행됨 → 시간 절약</li><li><strong>자동 리뷰</strong>: QA 에이전트가 보안 취약점을 발견하고 수정 요청</li><li><strong>의존성 준수</strong>: DB가 먼저 완료된 후에야 Frontend가 시작</li><li><strong>멀티 에이전트</strong>: DB, Frontend, Backend, QA 에이전트가 각자 역할 수행</li></ol></div><div class="info custom-block"><p class="custom-block-title">🎯 핵심 메시지</p><p><strong>&quot;사람은 감독하고, AI 팀이 실행한다.&quot;</strong></p><p>오케스트레이터를 사용하면:</p><ul><li>사람은 진행 상황만 모니터링</li><li>에이전트들이 역할에 따라 자동 실행</li><li>품질 검증이 워크플로우에 내장</li><li>결과는 구현 완료된 상태로 전달</li></ul></div>`,19)])])}const m=a(l,[["render",t]]);export{u as __pageData,m as default};

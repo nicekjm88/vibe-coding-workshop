@@ -1,0 +1,45 @@
+import{_ as a,o as t,c as n,ae as i}from"./chunks/framework.B6gjLfeO.js";const k=JSON.parse('{"title":"에이전트 팀 구성","description":"","frontmatter":{},"headers":[],"relativePath":"part4-oh-my-agent/agent-team.md","filePath":"part4-oh-my-agent/agent-team.md"}'),e={name:"part4-oh-my-agent/agent-team.md"};function l(p,s,r,o,d,h){return t(),n("div",null,[...s[0]||(s[0]=[i(`<h1 id="에이전트-팀-구성" tabindex="-1">에이전트 팀 구성 <a class="header-anchor" href="#에이전트-팀-구성" aria-label="Permalink to &quot;에이전트 팀 구성&quot;">​</a></h1><h2 id="전체-에이전트-맵" tabindex="-1">전체 에이전트 맵 <a class="header-anchor" href="#전체-에이전트-맵" aria-label="Permalink to &quot;전체 에이전트 맵&quot;">​</a></h2><p>oh-my-agent는 <strong>14개 전문 에이전트</strong>로 구성됩니다. 이 에이전트들은 3개 레이어로 조직됩니다:</p><div class="language-mermaid vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">mermaid</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">flowchart TD</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    subgraph Workflows[&quot;워크플로우&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        direction TB</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        W0[&quot;/brainstorm&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        W3[&quot;/plan&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        W2[&quot;/orchestrate&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        W4[&quot;/review&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        W5[&quot;/debug&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        W7[&quot;/design&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        W1b[&quot;/ultrawork&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    subgraph Orchestration[&quot;오케스트레이션 레이어&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        direction TB</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        PM[oma-pm]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        ORC[oma-orchestrator]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    subgraph Domain[&quot;도메인 레이어&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        direction TB</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        FE[oma-frontend]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        BE[oma-backend]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        DB[oma-db]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        MB[oma-mobile]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        DES[oma-design]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        TF[oma-tf-infra]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    subgraph Quality[&quot;품질 레이어&quot;]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        direction TB</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        QA[oma-qa]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">        DBG[oma-debug]</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    end</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    Workflows --&gt; Orchestration</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    Orchestration --&gt; Domain</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    Domain --&gt; Quality</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    Quality --&gt; CMT([oma-commit])</span></span></code></pre></div><h2 id="레이어별-설명" tabindex="-1">레이어별 설명 <a class="header-anchor" href="#레이어별-설명" aria-label="Permalink to &quot;레이어별 설명&quot;">​</a></h2><h3 id="오케스트레이션-레이어" tabindex="-1">오케스트레이션 레이어 <a class="header-anchor" href="#오케스트레이션-레이어" aria-label="Permalink to &quot;오케스트레이션 레이어&quot;">​</a></h3><p>전체 작업 흐름을 관리하는 <strong>지휘자</strong> 역할입니다.</p><table tabindex="0"><thead><tr><th>에이전트</th><th>역할</th></tr></thead><tbody><tr><td><strong>oma-pm</strong></td><td>요구사항 분석, 태스크 분해, 우선순위 결정, API 계약 정의</td></tr><tr><td><strong>oma-orchestrator</strong></td><td>CLI를 통한 에이전트 병렬 스폰, 실행 모니터링, 결과 수집</td></tr></tbody></table><h3 id="도메인-레이어" tabindex="-1">도메인 레이어 <a class="header-anchor" href="#도메인-레이어" aria-label="Permalink to &quot;도메인 레이어&quot;">​</a></h3><p>각 기술 분야를 전담하는 <strong>전문가</strong> 에이전트입니다.</p><table tabindex="0"><thead><tr><th>에이전트</th><th>전문 분야</th><th>핵심 스킬</th></tr></thead><tbody><tr><td><strong>oma-frontend</strong></td><td>UI 구현</td><td>React, Next.js, TypeScript, Tailwind, shadcn/ui</td></tr><tr><td><strong>oma-backend</strong></td><td>API 개발</td><td>Python, Node.js, Rust, Clean Architecture</td></tr><tr><td><strong>oma-db</strong></td><td>데이터베이스</td><td>SQL, NoSQL, Vector DB, 스키마 설계</td></tr><tr><td><strong>oma-mobile</strong></td><td>모바일 앱</td><td>Flutter, Dart, Riverpod</td></tr><tr><td><strong>oma-design</strong></td><td>디자인 시스템</td><td>토큰, 접근성(WCAG 2.2), 반응형</td></tr><tr><td><strong>oma-tf-infra</strong></td><td>인프라</td><td>Terraform, AWS, GCP, Azure</td></tr></tbody></table><h3 id="품질-레이어" tabindex="-1">품질 레이어 <a class="header-anchor" href="#품질-레이어" aria-label="Permalink to &quot;품질 레이어&quot;">​</a></h3><p>구현 결과를 <strong>검증하고 개선</strong>합니다.</p><table tabindex="0"><thead><tr><th>에이전트</th><th>역할</th></tr></thead><tbody><tr><td><strong>oma-qa</strong></td><td>OWASP 보안 감사, 성능 분석, 접근성 검증, 테스트 커버리지</td></tr><tr><td><strong>oma-debug</strong></td><td>근본 원인 분석, 최소 수정, 회귀 테스트 작성</td></tr></tbody></table><h3 id="유틸리티-에이전트" tabindex="-1">유틸리티 에이전트 <a class="header-anchor" href="#유틸리티-에이전트" aria-label="Permalink to &quot;유틸리티 에이전트&quot;">​</a></h3><p>작업 흐름을 보조하는 도구 에이전트입니다.</p><table tabindex="0"><thead><tr><th>에이전트</th><th>역할</th></tr></thead><tbody><tr><td><strong>oma-brainstorm</strong></td><td>구현 전 아이디어 탐색, 접근 방식 비교</td></tr><tr><td><strong>oma-translator</strong></td><td>자연스러운 다국어 번역, 톤/스타일 보존</td></tr><tr><td><strong>oma-commit</strong></td><td>Conventional Commits 규격 커밋 메시지 생성</td></tr><tr><td><strong>oma-dev-workflow</strong></td><td>CI/CD 파이프라인, 모노레포, 릴리스 자동화</td></tr></tbody></table><h2 id="에이전트-협업-예시" tabindex="-1">에이전트 협업 예시 <a class="header-anchor" href="#에이전트-협업-예시" aria-label="Permalink to &quot;에이전트 협업 예시&quot;">​</a></h2><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span>사용자: &quot;유저 인증이 있는 TODO 앱 만들어줘&quot;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>→ oma-pm       : 요구사항 분석, 8개 태스크로 분해</span></span>
+<span class="line"><span>→ oma-db       : users, todos 테이블 스키마 설계</span></span>
+<span class="line"><span>→ oma-backend  : 인증 API + CRUD API 구현 (병렬)</span></span>
+<span class="line"><span>→ oma-frontend : 로그인/회원가입 + TODO 리스트 UI 구현 (병렬)</span></span>
+<span class="line"><span>→ oma-qa       : 보안 감사 (SQL injection, XSS) + 성능 리뷰</span></span>
+<span class="line"><span>→ oma-commit   : 기능별 conventional commit 생성</span></span></code></pre></div><div class="info custom-block"><p class="custom-block-title">🤖 핵심 원리</p><p>각 에이전트는 <strong>자기 스킬(SKILL.md)만 로드</strong>합니다.</p><ul><li>oma-frontend는 React 스킬만 읽음 → 토큰 절약</li><li>oma-backend는 API 스킬만 읽음 → 역할 집중</li><li>전체를 다 읽는 에이전트는 없음 → 비용 최적화</li></ul></div>`,20)])])}const c=a(e,[["render",l]]);export{k as __pageData,c as default};
