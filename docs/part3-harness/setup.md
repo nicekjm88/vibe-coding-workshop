@@ -103,4 +103,4 @@ description: PM이 기능을 태스크로 분해
 **이 문제를 한 줄로 해결하는 도구가 있습니다.**
 :::
 
-> 다음 파트에서 <strong>oh-my-agent</strong>를 소개합니다.
+> 다음 파트에서 <strong>멀티 에이전트 하네스</strong>를 소개합니다.

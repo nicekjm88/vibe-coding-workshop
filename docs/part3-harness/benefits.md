@@ -33,7 +33,7 @@
 
 ### 💰 토큰 효율의 비밀
 
-oh-my-agent는 <strong>2레이어 스킬 설계</strong>로 토큰을 절약합니다:
+하네스 엔지니어링은 <strong>2레이어 스킬 설계</strong>로 토큰을 절약합니다:
 
 ```
 Layer 1: SKILL.md (가벼운 라우팅 정보)
@@ -58,9 +58,6 @@ Layer 2: 상세 스킬 파일들
 ```bash
 # 다른 프로젝트에 하네스 적용
 cp -r .agents/ ../new-project/
-
-# 또는 oh-my-agent로 한 줄 설치
-bunx oh-my-agent
 ```
 
 IDE, AI 모델, 프로젝트에 종속되지 않는 <strong>포터블 하네스</strong>입니다.

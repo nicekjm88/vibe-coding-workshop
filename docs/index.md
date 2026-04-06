@@ -9,9 +9,6 @@ hero:
     - theme: brand
       text: 커리큘럼 시작하기
       link: /part1-opening/
-    - theme: alt
-      text: oh-my-agent GitHub
-      link: https://github.com/first-fluke/oh-my-agent
 
 features:
   - title: "📖 Part 1 · 오프닝"
@@ -20,8 +17,8 @@ features:
     details: 프롬프트 → 컨텍스트 → 하네스 엔지니어링, 3세대에 걸친 진화 스토리
   - title: "🔧 Part 3 · 하네스 엔지니어링"
     details: 왜 하네스 엔지니어링인가? 의의, 이점, 그리고 일반적인 세팅 방법
-  - title: "🤖 Part 4 · oh-my-agent"
-    details: 포터블 멀티 에이전트 하네스 — 설치부터 에이전트 팀 구성까지
+  - title: "🤖 Part 4 · 멀티 에이전트 하네스"
+    details: 멀티 에이전트 하네스의 구조 — 설치부터 에이전트 팀 구성까지
   - title: "💻 Part 5 · 실습"
     details: "/brainstorm → /plan → /orchestrate 워크플로우를 직접 따라하는 핸즈온"
   - title: "🎯 Part 6 · 클로징"

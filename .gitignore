@@ -11,3 +11,5 @@ meeting-summarizer/backend/*.db
 meeting-summarizer/backend/venv/
 meeting-summarizer/frontend/node_modules/
 meeting-summarizer/frontend/.next/
+docs/.vitepress/dist/
+docs/.vitepress/cache/

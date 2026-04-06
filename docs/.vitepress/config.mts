@@ -41,7 +41,7 @@ export default defineConfig({
         ],
       },
       {
-        text: 'Part 4. oh-my-agent',
+        text: 'Part 4. 멀티 에이전트 하네스',
         collapsed: false,
         items: [
           { text: '소개', link: '/part4-oh-my-agent/' },

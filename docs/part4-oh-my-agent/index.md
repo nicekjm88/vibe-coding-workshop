@@ -1,21 +1,16 @@
-# oh-my-agent 소개
+# 멀티 에이전트 하네스 소개
 
-## oh-my-agent란?
+## 멀티 에이전트 하네스란?
 
-<strong>oh-my-agent</strong>는 하네스 엔지니어링을 <strong>한 줄 설치</strong>로 시작할 수 있는 <strong>포터블 멀티 에이전트 하네스</strong>입니다.
+<strong>멀티 에이전트 하네스</strong>는 하네스 엔지니어링을 <strong>빠르게 시작</strong>할 수 있도록 에이전트 팀과 워크플로우를 패키징한 <strong>포터블 도구</strong>입니다.
 
-> oh-my-zsh가 터미널을 혁신했듯이, oh-my-agent가 AI 코딩을 혁신합니다.
-
-```bash
-# 한 줄로 설치
-curl -fsSL https://raw.githubusercontent.com/first-fluke/oh-my-agent/main/cli/install.sh | bash
-```
+> `.agents/` 폴더 하나로 AI 코딩을 체계화합니다.
 
 ## 핵심 특징
 
 ### 🔌 어디서든 동작
 
-oh-my-agent는 특정 IDE에 종속되지 않습니다:
+멀티 에이전트 하네스는 특정 IDE에 종속되지 않습니다:
 
 | AI IDE/CLI | 지원 |
 |------------|:----:|
@@ -52,9 +47,3 @@ oh-my-agent는 특정 IDE에 종속되지 않습니다:
 ```
 
 11개 언어의 키워드를 자동 감지합니다.
-
-## GitHub
-
-- 📂 저장소: [github.com/first-fluke/oh-my-agent](https://github.com/first-fluke/oh-my-agent)
-- 📖 공식 문서: [first-fluke.github.io/oh-my-agent](https://first-fluke.github.io/oh-my-agent/)
-- 📦 npm: [npmjs.com/package/oh-my-agent](https://www.npmjs.com/package/oh-my-agent)

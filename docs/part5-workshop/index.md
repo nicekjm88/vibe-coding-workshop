@@ -4,7 +4,7 @@
 
 > **"AI 회의록 요약기를 만들자"**
 
-이 실습에서는 oh-my-agent의 슬래시 커맨드를 사용해 <strong>기획부터 디자인, 구현, 검증, 커밋까지의 전체 워크플로우</strong>를 체험합니다.
+이 실습에서는 슬래시 커맨드를 사용해 <strong>기획부터 디자인, 구현, 검증, 커밋까지의 전체 워크플로우</strong>를 체험합니다.
 
 회의 텍스트를 입력하면 AI가 자동으로 요약하고, 액션 아이템을 추출하는 실용적인 마이크로 앱을 만들어봅니다.
 
@@ -53,14 +53,13 @@
 실습을 시작하기 전에 확인해주세요:
 
 ::: warning ✅ 체크리스트
-1. oh-my-agent가 설치되어 있는가? → `oma doctor`
+1. `.agents/` 폴더가 프로젝트에 세팅되어 있는가?
 2. AI IDE/CLI가 준비되어 있는가?
 3. 새 프로젝트 디렉토리를 만들었는가?
 
 ```bash
 # 실습 프로젝트 생성
 mkdir meeting-summarizer && cd meeting-summarizer
-bunx oh-my-agent   # Fullstack 프리셋 선택
 ```
 :::
 
